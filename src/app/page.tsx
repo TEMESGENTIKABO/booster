@@ -138,7 +138,7 @@ export default function Home() {
                 name: "Harrar",
                 description: "Bold and fruity with blueberry tones",
                 price: "¥25",
-                image: "/harrar.jpg",
+                image: "/Harrar.jpg",
               },
             ].map((coffee, index) => (
               <motion.div
