@@ -33,23 +33,37 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10" />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/coffee-ceremony.mp4" type="video/mp4" />
-        </video>
+        {/* Video background with responsive fallbacks */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            // Add poster for mobile devices that might not autoplay
+            poster="/coffee-ceremony-poster.jpg"
+            // Add media queries for different video sources if needed
+          >
+            <source src="/coffee-ceremony.mp4" type="video/mp4" />
+            {/* Fallback for browsers that don't support video */}
+            <img
+              src="/coffee-ceremony-poster.jpg"
+              alt="Ethiopian coffee ceremony"
+              className="w-full h-full object-cover"
+            />
+          </video>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40 z-10" />
+        </div>
 
+        {/* Content container with responsive adjustments */}
         <div className="container mx-auto px-4 relative z-20 text-center text-white">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6"
           >
             Taste the Soul of Ethiopia
           </motion.h1>
@@ -57,7 +71,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
+            className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-2xl md:max-w-3xl mx-auto px-2"
           >
             Authentic Ethiopian coffee experience in the heart of Nanjing
           </motion.p>
@@ -65,24 +79,23 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
           >
             <Link
               href="/menu"
-              className="bg-amber-900 hover:bg-amber-800 text-white px-8 py-3 rounded-full text-lg font-medium transition-colors"
+              className="bg-amber-900 hover:bg-amber-800 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-lg font-medium transition-colors"
             >
               View Menu
             </Link>
             <Link
               href="/contact"
-              className="bg-white hover:bg-gray-100 text-amber-900 px-8 py-3 rounded-full text-lg font-medium transition-colors"
+              className="bg-white hover:bg-gray-100 text-amber-900 px-6 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-lg font-medium transition-colors"
             >
               Visit Us
             </Link>
           </motion.div>
         </div>
       </section>
-
       {/* Features Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
