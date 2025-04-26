@@ -125,7 +125,7 @@ export default function Events() {
         <div className="lg:w-1/2">
           <h2 className="text-3xl font-bold text-amber-900 mb-6">Private Events & Group Bookings</h2>
           <p className="text-gray-600 mb-4">
-            Host your next gathering at Habesha Brew! We offer private coffee ceremonies, tasting sessions, 
+            Host your next gathering at Booster Lover&apos;s! We offer private coffee ceremonies, tasting sessions, 
             and cultural experiences for groups of 6 or more.
           </p>
           <ul className="mb-6 space-y-2">
